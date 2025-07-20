@@ -1,3 +1,5 @@
+import UserInfo from './UserInfo';
+
 const UserProfile = (props) => {
   return (
     <div>
