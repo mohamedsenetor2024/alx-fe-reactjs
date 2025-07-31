@@ -1,10 +1,24 @@
-import { create } from 'zustand';
+import {create } from 'zustand';
 
-export const useRecipeStore = create((set) => ({
+
+
+ export const useRecipeStore = create((set) => ({
   recipes: [],
-  addRecipe: (newRecipe) =>
-    set((state) => ({ recipes: [...state.recipes, newRecipe] })),
- 
+  searchTerm: '',
+  filteredRecipes: [],
+  
+  setRecipes: (recipes) => set({ recipes, filteredRecipes: recipes }),
+
+  setSearchTerm: (term) => {
+    set((state) => {
+      const filtered = state.recipes.filter((recipe) =>
+        recipe.title.toLowerCase().includes(term.toLowerCase())
+      );
+      return { searchTerm: term, filteredRecipes: filtered };
+    });
+  },
+
+  // Optional: add more filters in future
 
  deleteRecipe: (id) =>
     set((state) => ({
@@ -20,3 +34,8 @@ export const useRecipeStore = create((set) => ({
 
   setRecipes: (recipes) => set({ recipes }),
 }));
+
+
+
+
+
