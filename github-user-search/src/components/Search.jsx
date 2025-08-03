@@ -55,7 +55,7 @@ const Search = () => {
       </form>
 
       {loading && <p>Loading...</p>}
-      {error && <p>Looks like we can't find the user(s).</p>}
+      {error && <p>Looks like we cant find the user(s).</p>}
 
       {users.map((user) => (
         <div key={user.id} className="p-4 border-b">
