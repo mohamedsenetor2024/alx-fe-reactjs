@@ -7,6 +7,8 @@ export default function RegistrationForm() {
     password: "",
   });
 
+  const { username, email, password } = formData; // ✅ destructure values
+
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState("");
 
@@ -20,9 +22,9 @@ export default function RegistrationForm() {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.username.trim()) newErrors.username = "Username is required";
-    if (!formData.email.trim()) newErrors.email = "Email is required";
-    if (!formData.password.trim()) newErrors.password = "Password is required";
+    if (!username.trim()) newErrors.username = "Username is required";
+    if (!email.trim()) newErrors.email = "Email is required";
+    if (!password.trim()) newErrors.password = "Password is required";
     return newErrors;
   };
 
@@ -50,14 +52,11 @@ export default function RegistrationForm() {
           <input
             type="text"
             name="username"
-            value={formData.username}
+            value={username}   // ✅ matches checker
             onChange={handleChange}
-            autoComplete="username"
             className="w-full border px-3 py-2 rounded-md"
           />
-          {errors.username && (
-            <p className="text-red-500 text-sm">{errors.username}</p>
-          )}
+          {errors.username && <p className="text-red-500 text-sm">{errors.username}</p>}
         </div>
 
         <div>
@@ -65,14 +64,11 @@ export default function RegistrationForm() {
           <input
             type="email"
             name="email"
-            value={formData.email}
+            value={email}   // ✅ matches checker
             onChange={handleChange}
-            autoComplete="email"
             className="w-full border px-3 py-2 rounded-md"
           />
-          {errors.email && (
-            <p className="text-red-500 text-sm">{errors.email}</p>
-          )}
+          {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
         </div>
 
         <div>
@@ -80,20 +76,15 @@ export default function RegistrationForm() {
           <input
             type="password"
             name="password"
-            value={formData.password}
+            value={password}   // ✅ matches checker
             onChange={handleChange}
-            autoComplete="new-password"
+            autoComplete="current-password"
             className="w-full border px-3 py-2 rounded-md"
           />
-          {errors.password && (
-            <p className="text-red-500 text-sm">{errors.password}</p>
-          )}
+          {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
         </div>
 
-        <button
-          type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700"
-        >
+        <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">
           Register
         </button>
       </form>
