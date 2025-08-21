@@ -23,11 +23,13 @@ export default function HomePage() {
             key={recipe.id}
             className="bg-white rounded-2xl shadow-md hover:shadow-xl transform hover:scale-105 transition duration-300"
           >
-            <img
-              src={recipe.image}
-              alt={recipe.title}
-              className="w-full h-48 object-cover rounded-t-2xl" 
-            />   
+           <div className="w-full h-72 overflow-hidden rounded-t-2xl">
+  <img
+    src={recipe.image}
+    alt={recipe.title}
+    className="w-full h-full object-cover"
+  />
+</div>  
             <div className="p-4">
               <h2 className="text-xl font-semibold mb-2">{recipe.title}</h2>
               <p className="text-gray-600">{recipe.summary}</p>
