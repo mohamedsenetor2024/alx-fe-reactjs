@@ -1,24 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import HomePage from "./components/HomePage";
+import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './components/HomePage';
+import RecipeDetail from './components/RecipeDetail';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-     <div className="bg-gray-100 min-h-screen">
-      <HomePage />
-    </div>
-     <div className="h-screen flex items-center justify-center bg-gray-100">
-      <h1 className="text-4xl font-bold text-blue-500">
-        Recipe Sharing Platform 🍲
-      </h1>
-    </div>
-    </>
+    <Router>
+      <div className="bg-gray-100 min-h-screen">
+        <Routes>
+          {/* Home Page */}
+          <Route path="/" element={<HomePage />} />
+
+          {/* Recipe Detail Page */}
+          <Route path="/recipe/:id" element={<RecipeDetail />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
-export default App
+export default App;
+
