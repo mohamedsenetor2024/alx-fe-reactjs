@@ -31,7 +31,6 @@ export default function AddRecipeForm() {
       return;
     }
 
-    // ✅ Simulating recipe submission
     console.log("New Recipe Submitted:", {
       title,
       ingredients: ingredients.split("\n"),
@@ -47,7 +46,7 @@ export default function AddRecipeForm() {
 
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white rounded-2xl shadow-lg mt-8">
-      <h2 className="text-2xl font-bold text-center mb-6">
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">
         ➕ Add a New Recipe
       </h2>
 
@@ -63,7 +62,7 @@ export default function AddRecipeForm() {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            className="w-full px-3 py-2 md:px-4 md:py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
             placeholder="Enter recipe title"
           />
           {errors.title && (
@@ -78,7 +77,7 @@ export default function AddRecipeForm() {
             value={ingredients}
             onChange={(e) => setIngredients(e.target.value)}
             rows="4"
-            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            className="w-full px-3 py-2 md:px-4 md:py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
             placeholder="List ingredients, one per line"
           />
           {errors.ingredients && (
@@ -93,7 +92,7 @@ export default function AddRecipeForm() {
             value={steps}
             onChange={(e) => setSteps(e.target.value)}
             rows="4"
-            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            className="w-full px-3 py-2 md:px-4 md:py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
             placeholder="Write each step on a new line"
           />
           {errors.steps && (
@@ -104,7 +103,7 @@ export default function AddRecipeForm() {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition"
+          className="w-full bg-blue-600 text-white font-semibold py-2 md:py-3 rounded-lg hover:bg-blue-700 transition"
         >
           Submit Recipe
         </button>
