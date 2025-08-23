@@ -1,17 +1,18 @@
 // src/App.jsx
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Posts from './pages/Posts';
 import PostDetail from './pages/PostDetail';
-import Profile from './pages/Profile';
+import Profile from './components/Profile';
 import ProfileDetails from './pages/ProfileDetails';
 import ProfileSettings from './pages/ProfileSettings';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import ProtectedRoute from './components/ProtectedRoute';
+import ProfileInfo from "./components/ProfileInfo";
+
 
 
 

@@ -1,7 +1,7 @@
 // src/pages/Profile.jsx
 import { NavLink, Outlet } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
-
+// import { Outlet, Link } from "react-router-dom";
 
 const tabStyle = ({ isActive }) => ({
 padding: '6px 10px',
