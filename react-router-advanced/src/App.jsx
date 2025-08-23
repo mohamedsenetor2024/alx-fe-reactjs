@@ -13,6 +13,7 @@ import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import ProtectedRoute from './components/ProtectedRoute';
 import ProfileInfo from "./components/ProfileInfo";
+import BlogPost from "./pages/BlogPost";
 
 
 
@@ -27,6 +28,8 @@ return (
 {/* Dynamic routing: /posts/:postId */}
 <Route path="posts" element={<Posts />} />
 <Route path="posts/:postId" element={<PostDetail />} />
+<Route path="blog/:id" element={<BlogPost />} />
+
 
 
 {/* Protected + Nested: /profile/... */}
