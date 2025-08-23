@@ -1,4 +1,6 @@
 // src/App.jsx
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
@@ -10,6 +12,7 @@ import ProfileSettings from './pages/ProfileSettings';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import ProtectedRoute from './components/ProtectedRoute';
+
 
 
 export default function App() {
