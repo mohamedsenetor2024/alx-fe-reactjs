@@ -8,9 +8,13 @@ const POSTS_QUERY_KEY = ['posts'];
 
 
 async function fetchPosts() {
-// Simulate slight latency so you can observe states
-await new Promise(r => setTimeout(r, 400));
-return apiGet('/posts');
+  // Simulate slight latency so you can observe states
+  await new Promise(r => setTimeout(r, 400));
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  if (!res.ok) {
+    throw new Error(`API ${res.status}: ${await res.text()}`);
+  }
+  return res.json();
 }
 
 export default function PostsComponent() {
