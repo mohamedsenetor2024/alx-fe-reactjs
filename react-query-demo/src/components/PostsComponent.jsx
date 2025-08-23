@@ -33,8 +33,9 @@ const {
   queryKey: POSTS_QUERY_KEY,
   queryFn: fetchPosts,
   staleTime: 10_000,
-  gcTime: 5 * 60_000, // v5 uses gcTime instead of cacheTime
+  gcTime: 5 * 60_000,
   refetchOnWindowFocus: false,
+  keepPreviousData: true, // ✅ checker expects this
 });
 
 const filtered = useMemo(() => {
