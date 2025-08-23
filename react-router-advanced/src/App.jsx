@@ -28,8 +28,8 @@ return (
 {/* Dynamic routing: /posts/:postId */}
 <Route path="posts" element={<Posts />} />
 <Route path="posts/:postId" element={<PostDetail />} />
-<Route path="blog/:id" element={<BlogPost />} />
 
+<Route path="/blog/:id" element={<BlogPost />} />
 
 
 {/* Protected + Nested: /profile/... */}
