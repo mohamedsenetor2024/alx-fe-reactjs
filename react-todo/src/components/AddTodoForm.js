@@ -1,6 +1,4 @@
-// src/components/AddTodoForm.js
 import React, { useState } from "react";
-
 
 export default function AddTodoForm({ onAdd }) {
   const [text, setText] = useState("");
@@ -25,4 +23,3 @@ export default function AddTodoForm({ onAdd }) {
     </form>
   );
 }
-
