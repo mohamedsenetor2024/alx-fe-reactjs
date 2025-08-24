@@ -1,3 +1,4 @@
+// src/components/TodoList.js
 import React, { useState } from "react";
 import AddTodoForm from "./AddTodoForm";
 
@@ -30,6 +31,7 @@ export default function TodoList() {
     <div>
       <h1>Todo List</h1>
 
+      {/* Use AddTodoForm instead of inline form */}
       <AddTodoForm onAdd={addTodo} />
 
       <ul>
@@ -51,7 +53,6 @@ export default function TodoList() {
               }}
               data-testid="delete-btn"
             >
-              ❌
             </button>
           </li>
         ))}
