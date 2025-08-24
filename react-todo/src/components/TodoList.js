@@ -1,3 +1,4 @@
+// src/components/TodoList.js
 import React, { useState } from "react";
 import AddTodoForm from "./AddTodoForm";
 
@@ -8,14 +9,10 @@ const initialTodos = [
 
 export default function TodoList() {
   const [todos, setTodos] = useState(initialTodos);
-  const [input, setInput] = useState("");
 
-  const addTodo = (e) => {
-    e.preventDefault();
-    if (!input.trim()) return;
-
-    setTodos([...todos, { id: Date.now(), text: input, completed: false }]);
-    setInput("");
+  const addTodo = (text) => {
+    if (!text.trim()) return;
+    setTodos([...todos, { id: Date.now(), text, completed: false }]);
   };
 
   const toggleTodo = (id) => {
@@ -33,15 +30,9 @@ export default function TodoList() {
   return (
     <div>
       <h1>Todo List</h1>
-      <form onSubmit={addTodo}>
-        <input
-          type="text"
-          placeholder="Add a new todo"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        />
-        <button type="submit">Add</button>
-      </form>
+
+      {/* Use AddTodoForm instead of inline form */}
+      <AddTodoForm onAdd={addTodo} />
 
       <ul>
         {todos.map((todo) => (
@@ -62,7 +53,6 @@ export default function TodoList() {
               }}
               data-testid="delete-btn"
             >
-              ❌
             </button>
           </li>
         ))}
